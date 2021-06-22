@@ -19,7 +19,7 @@ class Test_Calc():
 
     @pytest.mark.parametrize(['a','b','expect'],get_data()['add']['success'])
     def test_calc_add_success(self,a,b,expect):
-        assert expect == self.calc.add(a,b)
+        assert expect == round(self.calc.add(a,b),2)
 
     @pytest.mark.parametrize(['a', 'b', 'expect'], get_data()['add']['fail'])
     def test_calc_add_fail(self,a,b,expect):
