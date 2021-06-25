@@ -33,10 +33,10 @@ class Test_Add_Members():
         driver.get("https://work.weixin.qq.com/wework_admin/frame")
 
         driver.find_element(By.ID,"menu_contacts").click()
-        driver.find_element(By.XPATH,"//*[@id=\"js_contacts49\"]/div/div[2]/div/div[2]/div[3]/div[1]/a[1]").click()
-        driver.find_element(By.XPATH,"//*[@id=\"username\"]").send_keys("洪大力")
-        driver.find_element(By.XPATH,"//*[@id=\"memberAdd_english_name\"]").send_keys("大力")
-        driver.find_element(By.XPATH, "//*[@id=\"memberAdd_acctid\"]").send_keys("21061201")
+        driver.find_element(By.XPATH,'//*[@id="js_contacts49"]/div/div[2]/div/div[2]/div[3]/div[1]/a[1]').click()
+        driver.find_element(By.XPATH,'//*[@id="username"]').send_keys("洪大力")
+        driver.find_element(By.XPATH,'//*[@id="memberAdd_english_name"]').send_keys("大力")
+        driver.find_element(By.XPATH, '//*[@id="memberAdd_acctid"]').send_keys("21061201")
 
         target = driver.find_element(By.CSS_SELECTOR,"div:nth-child(3) > a.qui_btn ww_btn js_btn_save")
         # 拉动滚动条，直到最下面的保存按钮出现，这样才能定位到这个元素
