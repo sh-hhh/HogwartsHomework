@@ -21,6 +21,7 @@ class ContactPage(BasePage):
     # 添加部门信息成功
     def add_department_success(self,department):
         with allure.step(f"输入部门信息：{department}，添加成功"):
+            sleep(2)
             self.find_ele(*self._ADD_ICON).click()
             self.find_ele(*self._ADD_DEPARTMENT).click()
             self.find_ele(*self._DEPARTMENT_INPUT).send_keys(department)
