@@ -16,8 +16,9 @@ class ContactPage(BasePage):
     _PARENT_DEPART = (By.CSS_SELECTOR,  ".inputDlg_item:nth-child(3)>div>div>ul>li>a>i")
     _CONFIRM = (By.LINK_TEXT, "确定")
     _DEPARTMENT_LST = (By.CSS_SELECTOR, '.member_colLeft_bottom a:last-child')
+    _ERROR = (By.ID,"js_tips")
 
-    # 添加部门信息
+    # 添加部门信息成功
     def add_department_success(self,department):
         with allure.step(f"输入部门信息：{department}，添加成功"):
             self.find_ele(*self._ADD_ICON).click()
@@ -28,6 +29,19 @@ class ContactPage(BasePage):
             self.find_ele(*self._CONFIRM).click()
             logging.info("输入部门信息后确定添加")
         return ContactPage(self.driver)
+
+    # 添加部门信息失败
+    def add_department_fail(self, department):
+        with allure.step("部门信息输入不合法"):
+            self.find_ele(*self._ADD_ICON).click()
+            self.find_ele(*self._ADD_DEPARTMENT).click()
+            self.find_ele(*self._DEPARTMENT_INPUT).send_keys(department)
+            self.find_ele(*self._DROPDOWN_DEPART).click()
+            self.find_ele(*self._PARENT_DEPART).click()
+            self.find_ele(*self._CONFIRM).click()
+            logging.info("输入部门信息不合法，点击确定提示错误信息")
+            error_tip = self.find_ele(*self._ERROR).text
+        return error_tip
 
     def get_departments(self):
         sleep(5)
