@@ -1,0 +1,11 @@
+main_page:
+  contact_menu: ["id","menu_contacts"]
+contact_page:
+  add_icon: ["css", "i.member_colLeft_top_addBtn"]
+  add_depart: ["css", "a.js_create_party"]
+  input_depart: ["css", "form.form>div:nth-child(1)>input"]
+  btn_choose_depart: ["css", ".inputDlg_item>a>span.ww_btn_Dropdown_arrow"]
+  choose_depart: ["css",  ".inputDlg_item:nth-child(3)>div>div>ul>li>a>i"]
+  btn_submit: ["xpath", '//a[@d_ck="submit"]']
+  list_depart: ["css", '.member_colLeft_bottom a:last-child']
+  error_tips: ["id", "js_tips"]
