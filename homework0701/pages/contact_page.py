@@ -17,7 +17,7 @@ class ContactPage(BasePage):
     # 点击添加成员，跳转到添加成员方式选择页面
     def click_add_member(self):
         with allure.step("滑动找到添加成员"):
-            self.driver.find_element(*self._ADD_MEMBER_BTN).click()
+            self.find_and_click(*self._ADD_MEMBER_BTN)
         return AddMemberMenuPage(self.driver)
 
     def get_member_list(self):

@@ -14,12 +14,12 @@ class AddMemberMenuPage(BasePage):
     # 选择手动输入添加，天转到添加成员页面
     def click_add_member_with_input(self):
         with allure.step("点击手动输入添加"):
-            self.driver.find_element(*self._HAND_ADD).click()
+            self.find_and_click(*self._HAND_ADD)
         return AddMemberPage(self.driver)
 
     def click_back_to_contact_page(self):
         from homework0701.pages.contact_page import ContactPage
         with allure.step("返回通讯录页面"):
             sleep(3)
-            self.driver.find_element(*self._BACK_BTN).click()
+            self.find_and_click(*self._BACK_BTN)
         return ContactPage(self.driver)

@@ -11,5 +11,5 @@ class MainPage(BasePage):
     # 从默认的消息页跳转到通讯录
     def click_contact(self):
         with allure.step("点击通讯录"):
-            self.driver.find_element(*self._CONTACT).click()
+            self.find_and_click(*self._CONTACT)
         return ContactPage(self.driver)
