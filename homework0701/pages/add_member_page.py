@@ -25,7 +25,7 @@ class AddMemberPage(BasePage):
 
     def get_fail_message(self):
         # 获取错误提示信息，点击确定
-        fail_message = self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
-                                                'new UiSelector().resourceId(“com.tencent.wework:id/bg4”)').text
+        fail_message = self.driver.find_element(MobileBy.ID,
+                                                'com.tencent.wework:id/bg4').text
         self.driver.find_element(MobileBy.XPATH, "//*[@text='确定']").click()
         return fail_message
