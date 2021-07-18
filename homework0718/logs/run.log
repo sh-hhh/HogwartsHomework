@@ -1,0 +1,4 @@
+2021-07-18 23:46:11 INFO 测试通讯录添加成员信息 test_contact_member.py:15
+2021-07-18 23:46:12 INFO 测试通讯录查找成员信息 test_contact_member.py:28
+2021-07-18 23:46:12 INFO 测试通讯录更新成员信息 test_contact_member.py:34
+2021-07-18 23:46:13 INFO 测试通讯录删除成员信息 test_contact_member.py:43
